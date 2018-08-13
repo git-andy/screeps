@@ -18,7 +18,7 @@ var roomManager = {
             {
                 this.log('  ', 'can build new ' + structure);
             }
-            this.log(' ', structure + ' ' + CONTROLLER_STRUCTURES[structure][controllerLevel] + '/' + structureCount);
+            //this.log(' ', structure + ' ' + CONTROLLER_STRUCTURES[structure][controllerLevel] + '/' + structureCount);
         }
     },
     run: function(jsonRoomMap, jsonCreepLevelMap) {
