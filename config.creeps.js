@@ -1,4 +1,4 @@
-{
+var config = {
     "CREEP_MAP": {
         "harvester": {
             "0": 1,
@@ -79,3 +79,5 @@
         }
     }
 }
+
+module.exports = config;

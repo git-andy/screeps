@@ -9,9 +9,10 @@ var roleMiner = require('role.miner');
 var roleExplorer = require('role.explorer');
 var logger = require('common.logging');
 var helper = require('common.helper');
-//var roomConfig = require('config.room.json');
-//var creepConfig = require('config.creeps.json');
-var testConfig = require('config.test.json');
+
+var roomConfig = require('config.room');
+var creepConfig = require('config.creeps');
+var testConfig = require('config.test');
 
 var jsonRoomManager = require('room.manager');
 

@@ -1,4 +1,4 @@
-{
+var config = {
     "ROOM_MAP": [
         {
             "name": "E6N42",
@@ -226,3 +226,4 @@
         }
     ]
 }
+module.exports = config;
