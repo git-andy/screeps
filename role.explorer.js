@@ -2,7 +2,7 @@ var logger = require('common.logging');
 var controller = require('creep.controller');
 var workermanager = require('creep.workermanager');
 var helper = require('common.helper');
-var homeRoom = require('consts.room.home');
+//var homeRoom = require('consts.room.home');
 
 
 var roleExplorer = {
