@@ -10,9 +10,9 @@ var roleExplorer = require('role.explorer');
 var logger = require('common.logging');
 var helper = require('common.helper');
 
-var roomConfig = require('./config/config.room');
-var creepConfig = require('./config/config.creeps');
-var testConfig = require('./config/config.test');
+var roomConfig = require('./config/config.room.js');
+var creepConfig = require('./config/config.creeps.js');
+var testConfig = require('./config/config.test.js');
 
 var jsonRoomManager = require('room.manager');
 
