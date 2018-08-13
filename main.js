@@ -12,7 +12,6 @@ var helper = require('common.helper');
 
 var roomConfig = require('config.room');
 var creepConfig = require('config.creeps');
-var testConfig = require('config.test');
 
 var jsonRoomManager = require('room.manager');
 
@@ -21,16 +20,6 @@ var logRoomStatus = false;
 var logConstructionSites = false;
 var logStructureStatus = false;
 var logCreepStatus = false;
-
-var creepLevelMap = JSON.parse('{"CREEP_MAP": {' +
-    '"harvester":   {"0":1,"1":1,"2":1,"3":2,"4":2,"5":3,"6":2,"7":3,"8":3}'+
-    ',"builder":     {"0":1,"1":1,"2":1,"3":2,"4":2,"5":3,"6":2,"7":3,"8":3}'+
-    ',"upgrader":    {"0":1,"1":1,"2":1,"3":2,"4":2,"5":2,"6":2,"7":3,"8":3}'+
-    ',"repairer":    {"0":0,"1":0,"2":1,"3":1,"4":2,"5":2,"6":2,"7":3,"8":3}'+
-    ',"miner":       {"0":0,"1":0,"2":0,"3":0,"4":0,"5":0,"6":1,"7":2,"8":3}'+
-    ',"attacker":    {"0":0,"1":0,"2":0,"3":1,"4":1,"5":1,"6":1,"7":1,"8":1}'+
-    //',"explorer":    {"0":0,"1":0,"2":1,"3":1,"4":1,"5":1,"6":1,"7":1,"8":1}'+
-    '}}');
 
 var rooms = ['E7N42','E6N42'];
 
