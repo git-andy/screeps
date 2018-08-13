@@ -10,9 +10,9 @@ var roleExplorer = require('role.explorer');
 var logger = require('common.logging');
 var helper = require('common.helper');
 
-var roomConfig = require('config.room');
-var creepConfig = require('config.creeps');
-var testConfig = require('config.test');
+var roomConfig = require('./config/config.room');
+var creepConfig = require('./config/config.creeps');
+var testConfig = require('./config/config.test');
 
 var jsonRoomManager = require('room.manager');
 
@@ -60,7 +60,7 @@ module.exports.loop = function () {
     //console.log(Game.cpu.bucket + ' '  + Game.cpu.tickLimit+ ' '  + Game.cpu.limit);
     
     //roomManager.run(rooms,creepLevelMap);
-    jsonRoomManager.run(roomMap,creepLevelMap);
+    jsonRoomManager.run(roomConfig,creepLevelMap);
     
     for(var name in Game.creeps) {
         var creep = Game.creeps[name];
