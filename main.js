@@ -9,6 +9,7 @@ var roleMiner = require('role.miner');
 var roleExplorer = require('role.explorer');
 var logger = require('common.logging');
 var helper = require('common.helper');
+var roomDefender = require('room.defender');
 
 var roomConfig = require('config.room');
 var creepConfig = require('config.creeps');
