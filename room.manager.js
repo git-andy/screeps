@@ -141,8 +141,12 @@ var roomManager = {
             var structureCount = roomStructures.filter(s => s.structureType == structure).length;
             if (CONTROLLER_STRUCTURES[structure][controllerLevel] > structureCount)
             {
-                this.log('  ', ' I can build new:' + structure);
-                this.log('  ', ' Should I build: ' + roomJson.locations[structure].build);
+                this.log('  ', ' I can build new: ' + structure);
+                for (var newStructure in roomJson.locations[structure])
+                {
+                    this.log('  ', ' Should I build: [' + newStructure + ']' + roomJson.locations[structure][newStructure].build);
+                }
+                
             }
         }
     },
