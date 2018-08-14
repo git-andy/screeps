@@ -16,7 +16,7 @@ var roomManager = {
             {
                 // this is a new room. Spawn a creep and send them there.
                 var controllerPos = roomJson.locations.controller;
-                creepController.spawnExplorer('Spawn2',roomName,controllerPos);
+                creepController.spawnExplorer(defaultSpawn,roomName,controllerPos);
                 
             } else {
                 var controllerLevel = room.controller.level;
@@ -31,9 +31,6 @@ var roomManager = {
                     spawnName = s[0].name;
                 }
 
-
-
-
                 for (var creepIndex in jsonCreepLevelMap.CREEP_MAP) {
                     var creepName = creepIndex;
 
@@ -42,7 +39,7 @@ var roomManager = {
                     });
                     var targetCreepCount = jsonCreepLevelMap.CREEP_MAP[creepIndex][controllerLevel];
 
-                    this.log('roomManger.run ',roomName + ' ' + creepName + ' ' + currentCreepCount.length + '/' + targetCreepCount);
+                    //this.log('roomManger.run ',roomName + ' ' + creepName + ' ' + currentCreepCount.length + '/' + targetCreepCount);
 
                     if(currentCreepCount.length < targetCreepCount) {
                         creepController.spawnWorker(spawnName,creepName,roomName);
