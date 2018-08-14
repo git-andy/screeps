@@ -142,11 +142,12 @@ var roomManager = {
                 this.log('  ', ' I can build '+ buildCount +'new: ' + structure);
                 for (var newStructure in roomJson.locations[structure])
                 {
-                    this.log('  ', ' Should I build: [' + newStructure + '] ' + roomJson.locations[structure][newStructure].build);
+                    var textPos = roomJson.locations[structure][newStructure].position.split(',');
+                    this.log('  ', ' Should I build: [' + newStructure + '] ' + roomJson.locations[structure][newStructure].build + ' at ' + textPos);
 
                     if (roomJson.locations[structure][newStructure].build)
                     {
-                        var textPos = roomJson.locations[structure][newStructure].position.split(',');
+                        
                         var pos = new RoomPosition(textPos[0],textPos[1], room);
                         var whatsHere = helper.whatstructureishere(pos);
                         
