@@ -45,6 +45,7 @@ var roomManager = {
 
                     if(currentCreepCount.length < targetCreepCount) {
                         creepController.spawnWorker(spawnName,creepName,roomName);
+                        break;
                     }
                 }
 
