@@ -1,5 +1,3 @@
-var creepController = require('creep.controller');
-var roomController = require('room.controller');
 var roleHarvester = require('role.harvester');
 var roleUpgrader = require('role.upgrader');
 var roleBuilder = require('role.builder');
@@ -8,7 +6,6 @@ var roleAttacker = require('role.attacker');
 var roleMiner = require('role.miner');
 var roleExplorer = require('role.explorer');
 var logger = require('common.logging');
-var helper = require('common.helper');
 var roomDefender = require('room.defender');
 
 var roomConfig = require('config.room');
@@ -21,8 +18,6 @@ var logRoomStatus = false;
 var logConstructionSites = false;
 var logStructureStatus = false;
 var logCreepStatus = false;
-
-var rooms = ['E7N42','E6N42'];
 
 module.exports.loop = function () {
     if (logRoomStatus || logConstructionSites || logStructureStatus || logCreepStatus) { console.log(''); }
