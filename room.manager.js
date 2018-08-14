@@ -32,7 +32,6 @@ var roomManager = {
                 {
                     spawnName = s[0].name;
                 }
-                console.log('spawnName ' + spawnName);
 
                 for (var creepIndex in jsonCreepLevelMap.CREEP_MAP) {
                     var creepName = creepIndex;
@@ -129,7 +128,7 @@ var roomManager = {
     },
     structureManager: function(room,controllerLevel,roomJson)
     {
-        this.log('reportStructures',room + ' ' + controllerLevel);
+        //this.log('reportStructures',room + ' ' + controllerLevel);
         
         var roomStructures = room.find(FIND_MY_STRUCTURES);
 
