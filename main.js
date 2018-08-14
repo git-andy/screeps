@@ -38,7 +38,9 @@ module.exports.loop = function () {
             delete Memory.creeps[i];
         }
     }
-    
+    for(var name in Game.rooms) {
+        roomDefender.defendRoom(name,2);
+    }
     //console.log(Game.cpu.bucket + ' '  + Game.cpu.tickLimit+ ' '  + Game.cpu.limit);
 
     jsonRoomManager.run(roomConfig,creepConfig);
