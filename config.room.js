@@ -1,4 +1,7 @@
 var config = {
+    "GAME_CONFIG":{
+        "defaultspawn":"Spawn2"
+    },
     "ROOM_MAP": [
         {
             "name": "E6N42",
@@ -113,8 +116,7 @@ var config = {
                     {
                         "build": true,
                         "name": "Spawn2",
-                        "position": "29,22",
-                        "default": true
+                        "position": "29,22"
                     },
                     {
                         "build": false,

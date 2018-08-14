@@ -6,6 +6,7 @@ var creepController = require('creep.controller');
 var roomManager = {
     run: function(jsonRoomMap, jsonCreepLevelMap) {
     
+        var defaultSpawn = jsonRoomMap.GAME_CONFIG.defaultSpawn;
         for (var roomIndex in jsonRoomMap.ROOM_MAP) {
             var roomJson = jsonRoomMap.ROOM_MAP[roomIndex];
             var roomName = roomJson.name;
@@ -22,15 +23,11 @@ var roomManager = {
                 
                 this.structureManager(room,controllerLevel,roomJson);
                 this.controllerUpgradeManager(roomName, controllerLevel);
-                
-
 
                 var s = room.find(FIND_MY_SPAWNS);
-                var spawnName;
-                if (s.length == 0)
+                var spawnName = defaultSpawn;
+                if (s.length > 0)
                 {
-                    spawnName = "Spawn2";
-                } else {
                     spawnName = s[0].name;
                 }
 
