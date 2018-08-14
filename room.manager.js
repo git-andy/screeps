@@ -20,7 +20,7 @@ var roomManager = {
             } else {
                 var controllerLevel = room.controller.level;
                 
-                this.reportStructures(room,controllerLevel);
+                this.structureManager(room,controllerLevel,roomJson);
                 this.controllerUpgradeManager(roomName, controllerLevel);
                 
 
@@ -130,7 +130,7 @@ var roomManager = {
             }
         }
     },
-    reportStructures: function(room,controllerLevel)
+    structureManager: function(room,controllerLevel,roomJson)
     {
         this.log('reportStructures',room + ' ' + controllerLevel);
         
@@ -141,9 +141,9 @@ var roomManager = {
             var structureCount = roomStructures.filter(s => s.structureType == structure).length;
             if (CONTROLLER_STRUCTURES[structure][controllerLevel] > structureCount)
             {
-                this.log('  ', 'can build new ' + structure);
+                this.log('  ', ' I can build new:' + structure);
+                this.log('  ', ' Should I build: ' + roomJson.locations[structure].build);
             }
-            //this.log(' ', structure + ' ' + CONTROLLER_STRUCTURES[structure][controllerLevel] + '/' + structureCount);
         }
     },
     log: function(functionName, message)
