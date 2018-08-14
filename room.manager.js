@@ -146,7 +146,7 @@ var roomManager = {
                         var pos = new RoomPosition(textPos[0],textPos[1], room.name);
                         var whatsHere = helper.whatstructureishere(pos);
                         
-                        this.log('  builder ' + whatsHere);
+                        this.log('structureManager','  builder ' + whatsHere);
 
                     }
                 }
