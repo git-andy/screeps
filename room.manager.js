@@ -7,6 +7,7 @@ var roomManager = {
     run: function(jsonRoomMap, jsonCreepLevelMap) {
     
         var defaultSpawn = jsonRoomMap.GAME_CONFIG['defaultSpawn'];
+        defaultSpawn = 'Spawn2';
         
         for (var roomIndex in jsonRoomMap.ROOM_MAP) {
             var roomJson = jsonRoomMap.ROOM_MAP[roomIndex];
@@ -31,6 +32,7 @@ var roomManager = {
                 {
                     spawnName = s[0].name;
                 }
+                console.log('spawnName ' + spawnName);
 
                 for (var creepIndex in jsonCreepLevelMap.CREEP_MAP) {
                     var creepName = creepIndex;
