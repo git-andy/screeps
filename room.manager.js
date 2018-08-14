@@ -139,23 +139,17 @@ var roomManager = {
             var buildCount = CONTROLLER_STRUCTURES[structure][controllerLevel] - structureCount;
             if (buildCount > 0)
             {   
-                this.log('  ', ' I can build '+ buildCount +'new: ' + structure);
                 for (var newStructure in roomJson.locations[structure])
                 {
-                    var textPos = roomJson.locations[structure][newStructure].position.split(',');
-                    this.log('  ', ' Should I build: [' + newStructure + '] ' + roomJson.locations[structure][newStructure].build + ' at ' + textPos);
-
                     if (roomJson.locations[structure][newStructure].build)
                     {
-                        
-                        var pos = new RoomPosition(textPos[0],textPos[1], room);
+                        var textPos = roomJson.locations[structure][newStructure].position.split(',');    
+                        var pos = new RoomPosition(textPos[0],textPos[1], room.name);
                         var whatsHere = helper.whatstructureishere(pos);
                         
                         this.log('  builder ' + whatsHere);
 
                     }
-
-
                 }
             }
         }
