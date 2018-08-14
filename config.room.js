@@ -15,7 +15,7 @@ var config = {
                         "position": "23,21"
                     },
                     {
-                        "build": true,
+                        "build": false,
                         "name": "E6N42_SPAWN_2",
                         "position": "x,y"
                     }
