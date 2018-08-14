@@ -39,14 +39,14 @@ var roomManager = {
 
 
                 for (var creepIndex in jsonCreepLevelMap.CREEP_MAP) {
-                    var creepName = jsonCreepLevelMap.CREEP_MAP[creepIndex];
+                    var creepName = creepIndex;
 
                     var currentCreepCount = _.filter(Game.creeps,function (creep) {
                         return creep.memory.role == creepName && creep.memory.targetRoom != null && creep.memory.targetRoom == roomName;
                     });
                     var targetCreepCount = jsonCreepLevelMap.CREEP_MAP[creepIndex][controllerLevel];
 
-                    console.log(roomName + ' ' + creepName + ' ' + currentCreepCount.length + '/' + targetCreepCount);
+                    this.log('roomManger.run ',roomName + ' ' + creepName + ' ' + currentCreepCount.length + '/' + targetCreepCount);
 
                     if(currentCreepCount.length < targetCreepCount) {
                         creepController.spawnWorker(spawnName,creepName,roomName);
