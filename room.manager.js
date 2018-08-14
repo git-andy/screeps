@@ -6,7 +6,8 @@ var creepController = require('creep.controller');
 var roomManager = {
     run: function(jsonRoomMap, jsonCreepLevelMap) {
     
-        var defaultSpawn = jsonRoomMap.GAME_CONFIG.defaultSpawn;
+        var defaultSpawn = jsonRoomMap.GAME_CONFIG['defaultSpawn'];
+        
         for (var roomIndex in jsonRoomMap.ROOM_MAP) {
             var roomJson = jsonRoomMap.ROOM_MAP[roomIndex];
             var roomName = roomJson.name;
