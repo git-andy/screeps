@@ -32,7 +32,6 @@ var roomManager = {
                 {
                     spawnName = s[0].name;
                 }
-                this.log('run','about to loop creepmap');
                 for (var creepIndex in jsonCreepLevelMap.CREEP_MAP) {
                     var creepName = creepIndex;
 
@@ -44,7 +43,6 @@ var roomManager = {
                     //this.log('roomManger.run ',roomName + ' ' + creepName + ' ' + currentCreepCount.length + '/' + targetCreepCount);
 
                     if(currentCreepCount.length < targetCreepCount) {
-                        this.log('run.spawncreep','spawning');
                         creepController.spawnWorker(spawnName,creepName,roomName);
                         break;
                     }
@@ -149,6 +147,8 @@ var roomManager = {
                         var whatsHere = helper.whatstructureishere(pos);
                         
                         this.log('structureManager','  builder ' + whatsHere);
+                        var createConstSiteResult = room.createConstructionSite(pos,structure);
+                        this.log('structureManager','createSiteResult = ' + createConstSiteResult);
 
                     }
                 }
