@@ -263,7 +263,8 @@ var creepController = {
             {
                 // we have less than 200 energy, wait for 200 to create minimum creep
                 console.log('Not enough energy for basic spawn ['+spawnName+'] of ' + creepType + ' need ' + (200-energyAvailable));
-            } else 
+            } 
+            else 
             {
                 var finished = false;
                 var counter = 1;
