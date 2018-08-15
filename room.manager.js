@@ -32,7 +32,7 @@ var roomManager = {
                 {
                     spawnName = s[0].name;
                 }
-
+                this.log('run','about to loop creepmap');
                 for (var creepIndex in jsonCreepLevelMap.CREEP_MAP) {
                     var creepName = creepIndex;
 
