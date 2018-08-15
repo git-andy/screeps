@@ -10,7 +10,7 @@ var config = {
                 "controller": "5,30",
                 "spawn": [
                     {
-                        "build": true,
+                        "build": false,
                         "name": "E6N42_SPAWN_1",
                         "position": "23,21"
                     },
