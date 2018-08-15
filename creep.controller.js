@@ -249,7 +249,6 @@ var creepController = {
     },
     spawnWorker: function(spawnName, creepType, remoteRoom)
     {
-        
         if(!Game.spawns[spawnName].spawning) { 
             //console.log('ENTER: creep.controller.spawnWorker');
             var newName = creepType + Game.time;
@@ -263,7 +262,7 @@ var creepController = {
             if (energyAvailable < 200)
             {
                 // we have less than 200 energy, wait for 200 to create minimum creep
-                //console.log('Not enough energy for basic spawn')
+                console.log('Not enough energy for basic spawn of ' + creepType);
             } else 
             {
                 var finished = false;
