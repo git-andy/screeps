@@ -44,6 +44,7 @@ var roomManager = {
                     //this.log('roomManger.run ',roomName + ' ' + creepName + ' ' + currentCreepCount.length + '/' + targetCreepCount);
 
                     if(currentCreepCount.length < targetCreepCount) {
+                        this.log('run.spawncreep','spawning');
                         creepController.spawnWorker(spawnName,creepName,roomName);
                         break;
                     }
