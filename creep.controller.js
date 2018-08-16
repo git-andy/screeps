@@ -263,6 +263,7 @@ var creepController = {
             {
                 // we have less than 200 energy, wait for 200 to create minimum creep
                 console.log('Not enough energy for basic spawn ['+spawnName+'] of ' + creepType + ' working in '+remoteRoom+' need ' + (200-energyAvailable));
+                return ERR_NOT_ENOUGH_ENERGY;
             } 
             else 
             {
@@ -291,10 +292,13 @@ var creepController = {
                 }
                 //console.log('How about ' + cancreate);
                 if(creepController.testSpawn(spawnName,creepType,cancreate) == OK) {
-                    creepController.spawn(spawnName,creepType,cancreate,[{key:'targetRoom',value:remoteRoom}]);
+                    return creepController.spawn(spawnName,creepType,cancreate,[{key:'targetRoom',value:remoteRoom}]);
                 }
             }
             //console.log('EXIT: creep.controller.spawnWorker');
+        } else 
+        {
+            return ERR_BUSY;
         }
     },
     bodyCost: function (body) {

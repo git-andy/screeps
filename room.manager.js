@@ -7,12 +7,13 @@ var roomManager = {
     run: function(jsonRoomMap, jsonCreepLevelMap) {
     
         var defaultSpawn = jsonRoomMap.GAME_CONFIG['defaultSpawn'];
-        defaultSpawn = 'Spawn2';
-        
+        var defaultSpawn = 'Spawn2';
+
         for (var roomIndex in jsonRoomMap.ROOM_MAP) {
             var roomJson = jsonRoomMap.ROOM_MAP[roomIndex];
             var roomName = roomJson.name;
             var room = Game.rooms[roomName];
+            var spawnState = 'GOOD';
 
             if (!room)
             {
@@ -26,31 +27,33 @@ var roomManager = {
                 this.structureManager(room,controllerLevel,roomJson);
                 this.controllerUpgradeManager(roomName, controllerLevel);
 
-                var s = room.find(FIND_MY_SPAWNS);
-                var spawnName = defaultSpawn;
-                if (s.length > 0)
-                {
-                    spawnName = s[0].name;
-                }
-                for (var creepIndex in jsonCreepLevelMap.CREEP_MAP) {
-                    var creepName = creepIndex;
+                if (spawnState == 'GOOD') {
+                    var s = room.find(FIND_MY_SPAWNS);
+                    var spawnName = defaultSpawn;
+                    if (s.length > 0)
+                    {
+                        spawnName = s[0].name;
+                    }
+                    for (var creepIndex in jsonCreepLevelMap.CREEP_MAP) {
+                        var creepName = creepIndex;
 
-                    var currentCreepCount = _.filter(Game.creeps,function (creep) {
-                        return creep.memory.role == creepName && creep.memory.targetRoom != null && creep.memory.targetRoom == roomName;
-                    });
-                    var targetCreepCount = jsonCreepLevelMap.CREEP_MAP[creepIndex][controllerLevel];
+                        var currentCreepCount = _.filter(Game.creeps,function (creep) {
+                            return creep.memory.role == creepName && creep.memory.targetRoom != null && creep.memory.targetRoom == roomName;
+                        });
+                        var targetCreepCount = jsonCreepLevelMap.CREEP_MAP[creepIndex][controllerLevel];
 
-                    //this.log('roomManger.run ',roomName + ' ' + creepName + ' ' + currentCreepCount.length + '/' + targetCreepCount);
+                        //this.log('roomManger.run ',roomName + ' ' + creepName + ' ' + currentCreepCount.length + '/' + targetCreepCount);
 
-                    if(currentCreepCount.length < targetCreepCount) {
-                        creepController.spawnWorker(spawnName,creepName,roomName);
-                        break;
+                        if(currentCreepCount.length < targetCreepCount) {
+                            if (creepController.spawnWorker(spawnName,creepName,roomName) != OK) {
+                                spawnState = 'WAITING';
+                            }
+                            break;
+                        }
                     }
                 }
-
                 // if there are any CPUs left
                 roomController.buildRoads(room);
-                
             }
         }
     },
