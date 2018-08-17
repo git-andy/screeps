@@ -75,58 +75,46 @@ var roomManager = {
                     newX = source.pos.x - counter;
                     newY = source.pos.y;
                     // check & build
-                    this.buildExtension(roomName, new RoomPosition(newX,newY,roomName));
+                    roomController.buildExtension(roomName, new RoomPosition(newX,newY,roomName));
                     
                     newX = source.pos.x - counter;
                     newY = source.pos.y + counter;
                     // check
-                    this.buildExtension(roomName, new RoomPosition(newX,newY,roomName));
+                    roomController.buildExtension(roomName, new RoomPosition(newX,newY,roomName));
                     
                     newX = source.pos.x;
                     newY = source.pos.y + counter;
                     //check
-                    this.buildExtension(roomName, new RoomPosition(newX,newY,roomName));
+                    roomController.buildExtension(roomName, new RoomPosition(newX,newY,roomName));
                     
                     newX = source.pos.x + counter;
                     newY = source.pos.y + counter;
                     // check
-                    this.buildExtension(roomName, new RoomPosition(newX,newY,roomName));
+                    roomController.buildExtension(roomName, new RoomPosition(newX,newY,roomName));
                     
                     newX = source.pos.x + counter;
                     newY = source.pos.y;
                     // check
-                    this.buildExtension(roomName, new RoomPosition(newX,newY,roomName));
+                    roomController.buildExtension(roomName, new RoomPosition(newX,newY,roomName));
                     
                     newX = source.pos.x + counter;
                     newY = source.pos.y - counter;
                     // check
-                    this.buildExtension(roomName, new RoomPosition(newX,newY,roomName));
+                    roomController.buildExtension(roomName, new RoomPosition(newX,newY,roomName));
                     
                     newX = source.pos.x;
                     newY = source.pos.y - counter;
                     // check
-                    this.buildExtension(roomName, new RoomPosition(newX,newY,roomName));
+                    roomController.buildExtension(roomName, new RoomPosition(newX,newY,roomName));
                     
                     newX = source.pos.x - counter;
                     newY = source.pos.y - counter;
                     // check
-                    this.buildExtension(roomName, new RoomPosition(newX,newY,roomName));
+                    roomController.buildExtension(roomName, new RoomPosition(newX,newY,roomName));
                     
                 }
                 return;
             });
-        }
-    },
-    buildExtension: function(roomName, position)
-    {
-        if (position.x > 0 && position.y > 0 && position.x < 50 && position.y < 50) {
-            var whatsHere = helper.whatstructureishere(position);
-            //console.log('Checking for extension ' + position + ' ' + whatsHere +' '+(!(whatsHere)));
-            if (!(whatsHere))
-            {
-              var createResult = Game.rooms[roomName].createConstructionSite(position,STRUCTURE_EXTENSION);
-              console.log('Create Extension Result -> ' + this.createResultToText(createResult));
-            }
         }
     },
     structureManager: function(room,controllerLevel,roomJson)
