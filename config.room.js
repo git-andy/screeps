@@ -52,11 +52,11 @@ var config = {
                 ],
                 "tower": [
                     {
-                        "build": true,
+                        "build": false,
                         "position": "30,24"
                     },
                     {
-                        "build": true,
+                        "build": false,
                         "position": "14,6"
                     }
                 ],
@@ -171,7 +171,7 @@ var config = {
                 ],
                 "tower": [
                     {
-                        "build": true,
+                        "build": false,
                         "position": "22,19"
                     }
                 ],
