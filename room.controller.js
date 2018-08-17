@@ -33,7 +33,7 @@ var roomController = {
             if (!(whatsHere))
             {
               var createResult = Game.rooms[roomName].createConstructionSite(position,STRUCTURE_EXTENSION);
-              console.log('Create Extension Result -> ' + this.createResultToText(createResult));
+              console.log('Create Extension Result -> ' + helper.createResultToText(createResult));
             }
         }
     }
