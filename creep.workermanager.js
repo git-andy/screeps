@@ -6,12 +6,14 @@ var workermanager = {
     transferenergy: function(creep)
     {
         var target = creep.room.find(STRUCTURE_SPAWN);
+        console.log(creep.name + ' target ' + target);
         if (target.energy == target.energyCapacity)
         {
             target = creep.pos.findClosestByPath(FIND_STRUCTURES, {
                     filter: (structure) => { return (structure.structureType == STRUCTURE_EXTENSION || structure.structureType == STRUCTURE_SPAWN || structure.structureType == STRUCTURE_CONTAINER) && structure.energy < structure.energyCapacity; }
             });
         }
+        console.log(creep.name + ' target2 ' + target);
         if(target)
         {
             var transferResult = creep.transfer(target, RESOURCE_ENERGY);
