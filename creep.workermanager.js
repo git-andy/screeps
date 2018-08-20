@@ -5,7 +5,7 @@ var controller = require('creep.controller');
 var workermanager = {
     transferenergy: function(creep)
     {
-        var target = creep.pos.find(STRUCTURE_SPAWN);
+        var target = creep.room.find(STRUCTURE_SPAWN);
         if (spawn.energy = spawn.energyCapacity)
         {
             target = creep.pos.findClosestByPath(FIND_STRUCTURES, {
