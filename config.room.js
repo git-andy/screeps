@@ -74,7 +74,11 @@ var config = {
                 ],
                 "extractor": [
                     {
+<<<<<<< HEAD
                         "build": false,
+=======
+                        "build": true,
+>>>>>>> 02a34d635406cccd0e6b3e6026d260a59c37854a
                         "position": "43,18"
                     }
                 ],
@@ -86,6 +90,7 @@ var config = {
                 ],
                 "lab": [
                     {
+<<<<<<< HEAD
                         "build": false,
                         "position": "43,22"
                     },
@@ -95,13 +100,28 @@ var config = {
                     },
                     {
                         "build": false,
+=======
+                        "build": true,
+                        "position": "43,20"
+                    },
+                    {
+                        "build": true,
+                        "position": "44,21"
+                    },
+                    {
+                        "build": true,
+>>>>>>> 02a34d635406cccd0e6b3e6026d260a59c37854a
                         "position": "42,21"
                     }
                 ],
                 "container": [
                     {
                         "build": false,
+<<<<<<< HEAD
                         "position": "43,20"
+=======
+                        "position": "x,y"
+>>>>>>> 02a34d635406cccd0e6b3e6026d260a59c37854a
                     }
                 ],
                 "nuker": [
