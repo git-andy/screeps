@@ -5,10 +5,13 @@ var controller = require('creep.controller');
 var workermanager = {
     transferenergy: function(creep)
     {
-        var target = creep.pos.findClosestByPath(FIND_STRUCTURES, {
-                filter: (structure) => { return (structure.structureType == STRUCTURE_EXTENSION || structure.structureType == STRUCTURE_SPAWN || structure.structureType == STRUCTURE_CONTAINER) && structure.energy < structure.energyCapacity; }
-        });
-        
+        var target = creep.pos.find(STRUCTURE_SPAWN);
+        if (spawn.energy = spawn.energyCapacity)
+        {
+            target = creep.pos.findClosestByPath(FIND_STRUCTURES, {
+                    filter: (structure) => { return (structure.structureType == STRUCTURE_EXTENSION || structure.structureType == STRUCTURE_SPAWN || structure.structureType == STRUCTURE_CONTAINER) && structure.energy < structure.energyCapacity; }
+            });
+        }
         if(target)
         {
             var transferResult = creep.transfer(target, RESOURCE_ENERGY);
