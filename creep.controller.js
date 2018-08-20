@@ -6,8 +6,8 @@ var creepController = {
         var renewToEnergy = 1100;
         var renewBelowEnergy = 100;
         
-        var maxCreepCost = Game.spawns['Spawn2'].memory.maxCreepCost;
-        var creepLiveCost = maxCreepCost - 200;
+        var maxCreepCost = creep.room.energyCapacityAvailable;
+        var creepLiveCost = maxCreepCost * 0.85;
         
         if (creep.memory.renewing && creep.ticksToLive > renewToEnergy) {
             creep.memory.renewing = false;
