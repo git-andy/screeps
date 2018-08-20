@@ -6,7 +6,7 @@ var workermanager = {
     transferenergy: function(creep)
     {
         var target = creep.room.find(STRUCTURE_SPAWN);
-        if (target.energy = target.energyCapacity)
+        if (target.energy == target.energyCapacity)
         {
             target = creep.pos.findClosestByPath(FIND_STRUCTURES, {
                     filter: (structure) => { return (structure.structureType == STRUCTURE_EXTENSION || structure.structureType == STRUCTURE_SPAWN || structure.structureType == STRUCTURE_CONTAINER) && structure.energy < structure.energyCapacity; }
