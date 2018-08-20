@@ -40,6 +40,7 @@ var roleBuilder = {
                 //console.log(creep.name + ' working ' + creep.memory.working);
                 if (controller.buildextensionsite(creep)) {
                 //    console.log(creep.name + ' buildextensionsite');
+                } else if (controller.buildconstructionsitecontainer(creep)) {
                 } else if (controller.buildconstructionsite(creep)) {
                 //    console.log(creep.name + ' buildconstructionsite');
                 } else if (controller.buildroad(creep)) { 

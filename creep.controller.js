@@ -91,6 +91,25 @@ var creepController = {
         } 
         return false;
     },
+    buildconstructionsitecontainer: function(creep)
+    {
+        var targets = creep.room.find(FIND_CONSTRUCTION_SITES, {filter: (structure) => {return (structure.structureType == STRUCTURE_CONTAINER);}});
+        if(targets.length > 0) {
+            var buildResult = creep.build(targets[0]);
+            //console.log(creep.name + ' ' + buildResult);
+            if(buildResult == OK) {
+                //console.log(creep.name + ' building ');
+                creep.memory.action = 'building ' + helper.whatstructureishere(targets[0].pos);
+                return true;
+            } else if (buildResult == ERR_NOT_IN_RANGE) {
+                //console.log(creep.name + ' moving ');
+                creep.memory.action = 'moving to build ' + helper.whatstructureishere(targets[0].pos);
+                this.move(creep,targets[0]);
+                return true;
+            } 
+        }
+        return false;
+    },
     buildconstructionsite: function(creep)
     {
         var targets = creep.room.find(FIND_CONSTRUCTION_SITES, {filter: (structure) => {return (structure.structureType != STRUCTURE_ROAD);}});
