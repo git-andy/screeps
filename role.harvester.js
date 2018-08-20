@@ -29,7 +29,8 @@ var roleHarvester = {
             
             if (creep.memory.working)
             {
-                if (workermanager.transferenergy(creep)) {
+                if (controller.transferenergytospawn(creep)) {
+                } else if (controller.transferenergytoextension(creep)) {
                 } else if (controller.transferenergytotower(creep)) {
                 } else {
                     workermanager.upgradecontroller(creep);
