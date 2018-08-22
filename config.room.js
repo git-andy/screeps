@@ -46,8 +46,8 @@ var config = {
                 ],
                 "storage": [
                     {
-                        "build": false,
-                        "position": "x,y"
+                        "build": true,
+                        "position": "43,20"
                     }
                 ],
                 "tower": [
