@@ -188,9 +188,8 @@ var creepController = {
             }
         });
         if(targets.length > 0) {
-            targets.sort(function(a, b) {
-                return Number(a.hits) - Number(b.hits);
-            });
+            targets.sort((a,b) => a.hits - b.hits);
+            
             if(creep.repair(targets[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                 creep.memory.action = 'repairing ' + helper.whatstructureishere(targets[0].pos);
                 this.move(creep,targets[0]);
@@ -208,6 +207,24 @@ var creepController = {
                     structure.hits < structure.hitsMax;
             }
         });
+        if(targets.length > 0) {
+            if(creep.repair(targets[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
+                creep.memory.action = 'repairing ' + helper.whatstructureishere(targets[0].pos);
+                this.move(creep,targets[0]);
+                return true;
+            }
+        }
+        return false;
+    
+    },
+    repairstructure:function(creep)
+    {
+        var targets = creep.room.find(FIND_STRUCTURES, {
+            filter: object => object.hits < object.hitsMax
+        });
+        
+        targets.sort((a,b) => a.hits - b.hits);
+
         if(targets.length > 0) {
             if(creep.repair(targets[0], RESOURCE_ENERGY) == ERR_NOT_IN_RANGE) {
                 creep.memory.action = 'repairing ' + helper.whatstructureishere(targets[0].pos);

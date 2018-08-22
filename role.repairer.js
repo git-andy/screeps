@@ -24,6 +24,7 @@ var roleRepairer = {
     	    
     	    if (creep.memory.working) {
     	        if (controller.repairroad(creep)) {
+                } else if (controller.repairstructure(creep)) { 
     	        } else if (controller.repairwall(creep)) {    
     	        } else if (controller.buildconstructionsite(creep)) {
                 } else { workermanager.upgradecontroller(creep);
