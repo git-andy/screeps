@@ -27,34 +27,19 @@ var roleBuilder = {
     	        creep.memory.action = 'building';
     	    }
     
-            // Priority
-            // Build Construction site Structure Extension
-            // Build Constriction site Structure (Any)
-            // Transfer Energy to Extension or Spawn
-            // Repair Road
-            
-            // Harvest
-    
-    
             if(creep.memory.working) {
-                //console.log(creep.name + ' working ' + creep.memory.working);
                 if (controller.buildextensionsite(creep)) {
-                //    console.log(creep.name + ' buildextensionsite');
                 } else if (controller.buildconstructionsitecontainer(creep)) {
                 } else if (controller.buildconstructionsite(creep)) {
-                //    console.log(creep.name + ' buildconstructionsite');
                 } else if (controller.buildroad(creep)) { 
+                } else if (controller.buildconstructionsitelab(creep)) { 
                 } else if (controller.transferenergytospawn(creep)) { 
-                //        console.log(creep.name + ' transferenergytospawn');
                 } else if (controller.transferenergytoextension(creep)) {
-                //        console.log(creep.name + ' transferenergytoextension');
                 } else if (controller.repairroad(creep)) {
-                //    console.log(creep.name + ' repairroad');
                 } else {
                     workermanager.upgradecontroller(creep);
                 }
             } else {
-                //console.log(creep.name + ' harvesting ' + creep.memory.working);
                 controller.harvest(creep);
             }
         }
