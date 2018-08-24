@@ -65,7 +65,7 @@ var roomManager = {
                 // if there are any CPUs left
                 startCPU= Game.cpu.getUsed();
                 //roomController.buildRoads(room);
-                console.log('3.1.1: buildRoads' + roomName + ' ' + (Game.cpu.getUsed() - startCPU ));
+                console.log('3.1.1: buildRoads ' + roomName + ' ' + (Game.cpu.getUsed() - startCPU ));
             }
             console.log('3.1: ' + roomName + ' ' + (Game.cpu.getUsed() - startCPU1 ));
         }
