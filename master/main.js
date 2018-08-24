@@ -27,7 +27,8 @@ module.exports.loop = function () {
     
     //logger.logcreepdata(Game.creeps['upgrader_10702349']);
     //logger.logcreepdata(Game.creeps['explorer_10675996']);
-    
+    console.log('  ');
+
     var startCPU = Game.cpu.getUsed();
     for(var i in Memory.creeps) {
         if(!Game.creeps[i]) {
