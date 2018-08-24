@@ -28,27 +28,27 @@ module.exports.loop = function () {
     //logger.logcreepdata(Game.creeps['upgrader_10702349']);
     //logger.logcreepdata(Game.creeps['explorer_10675996']);
     
-    var startCPU = Game.cpu.getUsed();
+    var startCPU = Game.getUsedCpu();
     for(var i in Memory.creeps) {
         if(!Game.creeps[i]) {
             //console.log('CREEP: deleteing creep memory ' + Memory.creeps[i].name);
             delete Memory.creeps[i];
         }
     }
-    console.log('1: ' + Game.cpu.getUsed() - startCpu );
+    console.log('1: ' + Game.getUsedCpu() - startCpu );
 
-    startCPU = Game.cpu.cpu.getUsed();
+    startCPU = Game.getUsedCpu();
     for(var name in Game.rooms) {
         roomDefender.defendRoom(name,2);
     }
-    console.log('2: ' + Game.cpu.getUsed() - startCpu );
+    console.log('2: ' + Game.getUsedCpu() - startCpu );
 
-    startCPU = Game.cpu.getUsed();
+    startCPU = Game.getUsedCpu();
     jsonRoomManager.run(roomConfig,creepConfig);
-    console.log('3: ' + Game.cpu.getUsed() - startCpu );
+    console.log('3: ' + Game.getUsedCpu() - startCpu );
 
     
-    startCPU = Game.cpu.getUsed();
+    startCPU = Game.getUsedCpu();
     for(var name in Game.creeps) {
         var creep = Game.creeps[name];
         if(creep.memory.role == 'harvester') {
@@ -74,5 +74,5 @@ module.exports.loop = function () {
         }
         if (logCreepStatus) {logger.logcreepdata(creep);}
     }
-    console.log('4: ' + Game.cpu.getUsed() - startCpu );
+    console.log('4: ' + Game.getUsedCpu() - startCpu );
 }
