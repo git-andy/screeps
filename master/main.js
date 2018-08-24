@@ -37,7 +37,7 @@ module.exports.loop = function () {
     }
     console.log('1: ' + Game.cpu.getUsed() - startCPU );
 
-    startCPU = Game.cpu.cpu.getUsed();
+    startCPU = Game.cpu.getUsed();
     for(var name in Game.rooms) {
         roomDefender.defendRoom(name,2);
     }
