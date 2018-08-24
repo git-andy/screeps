@@ -10,7 +10,6 @@ var roomManager = {
         var defaultSpawn = 'Spawn2';
 
         for (var roomIndex in jsonRoomMap.ROOM_MAP) {
-            var startCPU1 = Game.cpu.getUsed();
             var roomJson = jsonRoomMap.ROOM_MAP[roomIndex];
             var roomName = roomJson.name;
             var room = Game.rooms[roomName];
@@ -56,7 +55,6 @@ var roomManager = {
                 // if there are any CPUs left
                 roomController.buildRoads(room);
             }
-            console.log('3.1: ' + roomName + ' ' + (Game.cpu.getUsed() - startCPU1 ));
         }
     },
     controllerUpgradeManager: function(roomName, controllerLevel)
