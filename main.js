@@ -47,6 +47,7 @@ module.exports.loop = function () {
     jsonRoomManager.run(roomConfig,creepConfig);
     console.log('3: ' + Game.getUsedCpu() - startCpu );
 
+    
     startCPU = Game.getUsedCpu();
     for(var name in Game.creeps) {
         var creep = Game.creeps[name];
