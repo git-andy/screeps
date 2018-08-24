@@ -41,6 +41,7 @@ var roomManager = {
                     {
                         spawnName = s[0].name;
                     }
+                    startCPU= Game.cpu.getUsed();
                     for (var creepIndex in jsonCreepLevelMap.CREEP_MAP) {
                         var creepName = creepIndex;
 
@@ -58,10 +59,12 @@ var roomManager = {
                             break;
                         }
                     }
+                    console.log('3.1.1: creepspawn counter manager' + roomName + ' ' + (Game.cpu.getUsed() - startCPU ));
+
                 }
                 // if there are any CPUs left
                 startCPU= Game.cpu.getUsed();
-                roomController.buildRoads(room);
+                'roomController.buildRoads(room);
                 console.log('3.1.1: buildRoads' + roomName + ' ' + (Game.cpu.getUsed() - startCPU ));
             }
             console.log('3.1: ' + roomName + ' ' + (Game.cpu.getUsed() - startCPU1 ));
