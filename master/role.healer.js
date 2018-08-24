@@ -25,16 +25,13 @@ var roleMiner = {
             
             if (creep.memory.working)
             {
-                const target = creep.pos.findClosestByRange(FIND_MY_CREEPS, {
-                    filter: function(object) {
-                        return object.hits < object.hitsMax;
-                    }
-                });
-                if(target) {
-                    if(creep.heal(target) == ERR_NOT_IN_RANGE) {
-                        creep.moveTo(target);
-                    }
-                }
+                if (workermanager.heal(creep)) {
+                } else if (controller.transferenergytospawn(creep)) {
+                } else if (controller.transferenergytoextension(creep)) {
+                } else if (controller.transferenergytotower(creep)) {
+                } else {
+                    workermanager.upgradecontroller(creep);
+                } 
             } else {
                 controller.harvest(creep);
             }

@@ -3,6 +3,26 @@ var helper = require('common.helper');
 var controller = require('creep.controller');
 
 var workermanager = {
+    heal: function(creep){
+        const target = creep.pos.findClosestByRange(FIND_MY_CREEPS, {
+            filter: function(object) {
+                return object.hits < object.hitsMax;
+            }
+        });
+        if(target) {
+            var healResult = reep.heal(target)
+            if (healResult == OK)
+            { 
+                creep.memory.action = 'healing ' + target.pos;
+                return true;
+            } else if(healResult == ERR_NOT_IN_RANGE) {
+                creep.memory.action = 'moving to ' + target.pos;
+                creep.moveTo(target);
+                return true;
+            }
+        }
+        return false;
+    },
     transferenergy: function(creep)
     {
         var target = creep.room.find(STRUCTURE_SPAWN);
@@ -48,8 +68,9 @@ var workermanager = {
         } else if (upgradeControllerResult == ERR_NOT_IN_RANGE) {
             creep.memory.action = 'moving to controller ' + roomController.pos +'';
             controller.move(creep,roomController);
-            
+            return true;
         }        
+        return false;
     },
     scavengeResources: function(creep, room)
     {
