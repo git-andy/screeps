@@ -25,8 +25,14 @@ var roomManager = {
             } else {
                 var controllerLevel = room.controller.level;
                 
+                startCPU= Game.cpu.getUsed();
                 this.structureManager(room,controllerLevel,roomJson);
+                console.log('3.1.1: structureManager' + roomName + ' ' + (Game.cpu.getUsed() - startCPU ));
+
+                startCPU= Game.cpu.getUsed();
                 this.controllerUpgradeManager(roomName, controllerLevel);
+                console.log('3.1.1: controllerUpgradeManager' + roomName + ' ' + (Game.cpu.getUsed() - startCPU ));
+
 
                 if (spawnState == 'GOOD') {
                     var s = room.find(FIND_MY_SPAWNS);
@@ -54,7 +60,9 @@ var roomManager = {
                     }
                 }
                 // if there are any CPUs left
+                startCPU= Game.cpu.getUsed();
                 roomController.buildRoads(room);
+                console.log('3.1.1: buildRoads' + roomName + ' ' + (Game.cpu.getUsed() - startCPU ));
             }
             console.log('3.1: ' + roomName + ' ' + (Game.cpu.getUsed() - startCPU1 ));
         }
