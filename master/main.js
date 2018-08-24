@@ -35,7 +35,7 @@ module.exports.loop = function () {
             delete Memory.creeps[i];
         }
     }
-    console.log('1: ' + Game.cpu.getUsed() - startCPU );
+    console.log('1: ' + (Game.cpu.getUsed() - startCPU));
 
     startCPU = Game.cpu.getUsed();
     for(var name in Game.rooms) {
