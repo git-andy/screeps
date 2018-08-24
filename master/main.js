@@ -41,11 +41,11 @@ module.exports.loop = function () {
     for(var name in Game.rooms) {
         roomDefender.defendRoom(name,2);
     }
-    console.log('2: ' + Game.cpu.getUsed() - startCPU );
+    console.log('2: ' + (Game.cpu.getUsed() - startCPU ));
 
     startCPU = Game.cpu.getUsed();
     jsonRoomManager.run(roomConfig,creepConfig);
-    console.log('3: ' + Game.cpu.getUsed() - startCPU );
+    console.log('3: ' + (Game.cpu.getUsed() - startCPU ));
 
     
     startCPU = Game.cpu.getUsed();
@@ -74,5 +74,5 @@ module.exports.loop = function () {
         }
         if (logCreepStatus) {logger.logcreepdata(creep);}
     }
-    console.log('4: ' + Game.cpu.getUsed() - startCPU );
+    console.log('4: ' + (Game.cpu.getUsed() - startCPU ));
 }
