@@ -72,6 +72,11 @@ module.exports.loop = function () {
             roleRepairer.run(creep);
             console.log('4.1: repairer ' + (Game.cpu.getUsed() - startCPU1 ));
         }
+        if(creep.memory.role == 'healer') {
+            startCPU1 = Game.cpu.getUsed();
+            roleHealer.run(creep);
+            console.log('4.1: healer ' + (Game.cpu.getUsed() - startCPU1 ));
+        }
         if(creep.memory.role == 'attacker') {
             startCPU1 = Game.cpu.getUsed();
             roleAttacker.run(creep);
