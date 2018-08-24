@@ -35,42 +35,56 @@ module.exports.loop = function () {
             delete Memory.creeps[i];
         }
     }
-    console.log('1: ' + (Game.cpu.getUsed() - startCPU));
+    console.log('1: Delete Memory ' + (Game.cpu.getUsed() - startCPU));
 
     startCPU = Game.cpu.getUsed();
     for(var name in Game.rooms) {
         roomDefender.defendRoom(name,2);
     }
-    console.log('2: ' + (Game.cpu.getUsed() - startCPU ));
+    console.log('2: Defend Room ' + (Game.cpu.getUsed() - startCPU ));
 
     startCPU = Game.cpu.getUsed();
     jsonRoomManager.run(roomConfig,creepConfig);
-    console.log('3: ' + (Game.cpu.getUsed() - startCPU ));
+    console.log('3: Run Room' + (Game.cpu.getUsed() - startCPU ));
 
     
     startCPU = Game.cpu.getUsed();
     for(var name in Game.creeps) {
         var creep = Game.creeps[name];
         if(creep.memory.role == 'harvester') {
+            startCPU1 = Game.cpu.getUsed();
             roleHarvester.run(creep);
+            console.log('4.1: harvester' + (Game.cpu.getUsed() - startCPU1 ));
         }
         if(creep.memory.role == 'upgrader') {
+            startCPU1 = Game.cpu.getUsed();
             roleUpgrader.run(creep);
+            console.log('4.1: upgrader' + (Game.cpu.getUsed() - startCPU1 ));
         }
         if(creep.memory.role == 'builder') {
+            startCPU1 = Game.cpu.getUsed();
             roleBuilder.run(creep);
+            console.log('4.1: builder' + (Game.cpu.getUsed() - startCPU1 ));
         }
         if(creep.memory.role == 'repairer') {
+            startCPU1 = Game.cpu.getUsed();
             roleRepairer.run(creep);
+            console.log('4.1: repairer' + (Game.cpu.getUsed() - startCPU1 ));
         }
         if(creep.memory.role == 'attacker') {
+            startCPU1 = Game.cpu.getUsed();
             roleAttacker.run(creep);
+            console.log('4.1: attacker' + (Game.cpu.getUsed() - startCPU1 ));
         }
         if(creep.memory.role == 'miner') {
+            startCPU1 = Game.cpu.getUsed();
             roleMiner.run(creep);
+            console.log('4.1: miner' + (Game.cpu.getUsed() - startCPU1 ));
         }
         if(creep.memory.role == 'explorer') {
+            startCPU1 = Game.cpu.getUsed();
             roleExplorer.run(creep);
+            console.log('4.1: explorer' + (Game.cpu.getUsed() - startCPU1 ));
         }
         if (logCreepStatus) {logger.logcreepdata(creep);}
     }
