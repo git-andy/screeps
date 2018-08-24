@@ -1,3 +1,0 @@
-# screeps
-
-https://screeps.com
