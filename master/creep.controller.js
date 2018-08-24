@@ -329,6 +329,10 @@ var creepController = {
                 while (!finished) {
                     for(var i=0;i<counter;i++)
                     {
+                        if (creepType == 'healer')
+                        {
+                            working.push(HEAL);
+                        }
                         working.push(WORK);
                         working.push(CARRY);
                         working.push(MOVE);
