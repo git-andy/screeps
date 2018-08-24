@@ -27,11 +27,11 @@ var roomManager = {
                 
                 startCPU= Game.cpu.getUsed();
                 this.structureManager(room,controllerLevel,roomJson);
-                console.log('3.1.1: structureManager' + roomName + ' ' + (Game.cpu.getUsed() - startCPU ));
+                console.log('3.1.1: structureManager ' + roomName + ' ' + (Game.cpu.getUsed() - startCPU ));
 
                 startCPU= Game.cpu.getUsed();
                 this.controllerUpgradeManager(roomName, controllerLevel);
-                console.log('3.1.1: controllerUpgradeManager' + roomName + ' ' + (Game.cpu.getUsed() - startCPU ));
+                console.log('3.1.1: controllerUpgradeManager ' + roomName + ' ' + (Game.cpu.getUsed() - startCPU ));
 
 
                 if (spawnState == 'GOOD') {
@@ -59,7 +59,7 @@ var roomManager = {
                             break;
                         }
                     }
-                    console.log('3.1.1: creepspawn counter manager' + roomName + ' ' + (Game.cpu.getUsed() - startCPU ));
+                    console.log('3.1.1: creepspawn counter manager ' + roomName + ' ' + (Game.cpu.getUsed() - startCPU ));
 
                 }
                 // if there are any CPUs left

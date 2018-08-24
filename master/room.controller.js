@@ -18,7 +18,7 @@ var roomController = {
                     var whatsHere = helper.whatstructureishere(pos);
                     if (whatsHere != STRUCTURE_ROAD && whatsHere != STRUCTURE_CONTROLLER) {
                         var createResult = room.createConstructionSite(path[point].x,path[point].y,STRUCTURE_ROAD);
-                        console.log('Creating Road From:' + places[i].pos + ', To:' + places[j].pos + ',pos:{' + pos + '}, Result:' + helper.createResultToText(createResult)+', WhatHere:' + whatsHere);
+                        //console.log('Creating Road From:' + places[i].pos + ', To:' + places[j].pos + ',pos:{' + pos + '}, Result:' + helper.createResultToText(createResult)+', WhatHere:' + whatsHere);
                         return;
                     }
                 }
