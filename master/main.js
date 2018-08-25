@@ -36,15 +36,14 @@ module.exports.loop = function () {
             delete Memory.creeps[i];
         }
     }
-    console.log('1: ' + (Game.cpu.getUsed() - startCPU));
-
+    logger.log('main.loop.delete creep memory',Game.cpu.getUsed() - startCPU)
+    
     startCPU = Game.cpu.getUsed();
     for(var name in Game.rooms) {
         roomDefender.defendRoom(name,2);
     }
     logger.log('main.loop.defendroom',Game.cpu.getUsed() - startCPU)
-    console.log('2: ' + (Game.cpu.getUsed() - startCPU ));
-
+    
     startCPU = Game.cpu.getUsed();
     jsonRoomManager.run(roomConfig,creepConfig);
     console.log('3: ' + (Game.cpu.getUsed() - startCPU ));
