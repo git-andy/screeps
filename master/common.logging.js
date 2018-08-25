@@ -96,6 +96,10 @@ var logger = {
         });
         
         return result;
+    },
+    log: function(functionName, message)
+    {
+        console.log(functionName+': ' + message);
     }
 };
 
